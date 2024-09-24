@@ -1,11 +1,11 @@
 ## Portfolio
 
-This is my personal portfolio created with Tailwind CSS. We can find details about my skills as well as projects which I'm most proud of creating. There is a form with which you can get in contact with me. Lastly, I have added all my social accounts.
+Welcome to my personal portfolio, crafted with NextJS, TypeScript, Tailwind CSS, and Framer Motion. Here, you'll discover detailed insights into my skills and explore the projects I'm most proud of. Feel free to reach out through any of the provided links to discuss your next idea or project. Let's create something amazing together!
 
-![Hero](assets/images/hero.png)
-![Projects](assets/images/projects.png)
-![Testimonials](assets/images/testimonials.png)
-![About](assets/images/about_me.png)
+![Hero](./src/assets/images/hero.png)
+![Projects](./src/assets/images/projects.png)
+![Testimonials](./src/assets/images/testimonials.png)
+![About](./src/assets/images/about_me.png)
 
 # BUILD WITH
 
@@ -29,6 +29,10 @@ https://marioskanellopoulos.com/
 # Show your support
 
 Give ⭐️ if you like this project!
+
+# Acknowledgments
+
+Frontend Tribe
 
 ### 🤝 Contributing
 
