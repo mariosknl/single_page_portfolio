@@ -1,55 +1,97 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import inoxtecLandingPage from "@/assets/images/inoxtec.png";
+import ylgLandingPage from "@/assets/images/ylg.png";
+import theodosiaWebsite from "@/assets/images/theodosiantenti.png";
+import onthornsWebsite from "@/assets/images/onthorns.png";
+import blockreadyWebsite from "@/assets/images/blockready.png";
+import cognityWebsite from "@/assets/images/cognity.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Cognity",
+    year: "Mar 2022",
+    title: "Web & Mobile Developer",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Worked on projects using various technology stacks" },
+      {
+        title: "Collaborated on projects for major Greek companies",
+      },
+      {
+        title: "Proficient in Frontend Development",
+      },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://www.cognity.gr",
+    image: cognityWebsite,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Blockready",
+    year: "Mar 2021 - Apr 2022",
+    title: "Online Blockchain Courses",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Created a website using the Kajabi platform" },
+      { title: "Produced over 12 hours of video courses" },
+      { title: "Implemented email marketing automations" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://www.blockready.com",
+    image: blockreadyWebsite,
   },
   {
-    company: "Quantum Dynamics",
+    company: "Inoxtec",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "Greek Business Website",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Enhanced website performance with NextJS" },
+      { title: "Utilized Sanity CMS for data management" },
+      { title: "Designed to be responsive across multiple screen sizes" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://www.inoxtec.gr",
+    image: inoxtecLandingPage,
+  },
+  {
+    company: "YLG",
+    year: "2022",
+    title: "NFT Game Landing Page",
+    results: [
+      { title: "Developed front-end applications using ReactJS" },
+      { title: "Created animations using Framer Motion" },
+      { title: "Styled application using TailwindCSS" },
+    ],
+    link: "https://www.yourlifegames.com/",
+    image: ylgLandingPage,
+  },
+  {
+    company: "Theodosia Ntenti",
+    year: "2023",
+    title: "Fashion Designer Website",
+    results: [
+      { title: "Developed a Shopify website for women's fashion" },
+      { title: "Implemented email marketing automations" },
+      { title: "Integrated payment systems with Viva Wallet" },
+    ],
+    link: "https://www.theodosiantenti.gr",
+    image: theodosiaWebsite,
+  },
+  {
+    company: "On Thorns I Lay",
+    year: "2023",
+    title: "Music Band Website",
+    results: [
+      { title: "Developed a WordPress website for a music band" },
+      { title: "Integrated shopping cart with PayPal" },
+      { title: "Managed discography, upcoming events, and inventory" },
+    ],
+    link: "https://onthornsilay.live/",
+    image: onthornsWebsite,
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projects">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Results"

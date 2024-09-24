@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import bookImage from "@/assets/images/book-cover.png";
+import unfuckImage from "@/assets/images/unfuck.jpg";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
@@ -10,7 +10,9 @@ import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import ChromeIcon from "@/assets/icons/chrome.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import mapImage from "@/assets/images/map.png";
+import NextJSIcon from "@/assets/icons/nextjs.svg";
+import TailwindCSSIcon from "@/assets/icons/tailwindcss.svg";
+import mapImage from "@/assets/images/mapGR.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
@@ -31,8 +33,16 @@ const toolboxItems = [
     iconType: CssIcon,
   },
   {
+    title: "TailwindCSS",
+    iconType: TailwindCSSIcon,
+  },
+  {
     title: "React",
     iconType: ReactIcon,
+  },
+  {
+    title: "NextJS",
+    iconType: NextJSIcon,
   },
   {
     title: "Chrome",
@@ -42,26 +52,24 @@ const toolboxItems = [
     title: "Github",
     iconType: GithubIcon,
   },
+  {
+    title: "React Native",
+    iconType: ReactIcon,
+  },
 ];
 
 const hobbies = [
   {
-    title: "Painting",
-    emoji: "🎨",
+    title: "Travelling",
+    emoji: "✈️",
     left: "5%",
     top: "5%",
   },
   {
-    title: "Photography",
-    emoji: "📷",
+    title: "Live Events",
+    emoji: "🎤",
     left: "50%",
     top: "5%",
-  },
-  {
-    title: "Hiking",
-    emoji: "🥾",
-    left: "35%",
-    top: "40%",
   },
   {
     title: "Gaming",
@@ -84,15 +92,33 @@ const hobbies = [
   {
     title: "Reading",
     emoji: "📚",
-    left: "45%",
+    left: "30%",
     top: "70%",
+  },
+  {
+    title: "Cooking",
+    emoji: "🍳",
+    left: "75%",
+    top: "25%",
+  },
+  {
+    title: "Gardening",
+    emoji: "🌱",
+    left: "30%",
+    top: "20%",
+  },
+  {
+    title: "Pilates",
+    emoji: "🧘‍♀️",
+    left: "55%",
+    top: "65%",
   },
 ];
 
 export const AboutSection = () => {
   const constraintRef = useRef(null);
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28" id="about">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -107,8 +133,8 @@ export const AboutSection = () => {
                 title="My Reads"
                 description="Explore the books shaping my perpectives."
               />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={bookImage} alt="Book Cover" />
+              <div className="w-44 mx-auto mt-2 md:mt-0">
+                <Image src={unfuckImage} alt="Book Cover" />
               </div>
             </Card>
 
@@ -167,7 +193,7 @@ export const AboutSection = () => {
               <Image
                 src={mapImage}
                 alt="map"
-                className="h-full w-full object-cover object-left-top"
+                className="h-full w-full object-cover object-right-top"
               />
               <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
