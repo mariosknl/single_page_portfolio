@@ -1,4 +1,4 @@
-import memojiImage from "@/assets/images/memoji-computer.png";
+import memojiImage from "@/assets/images/memoji-avatar-7.png";
 import Image from "next/image";
 import ArrowDowm from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";

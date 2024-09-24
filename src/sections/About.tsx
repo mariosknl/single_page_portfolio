@@ -13,7 +13,7 @@ import GithubIcon from "@/assets/icons/github.svg";
 import NextJSIcon from "@/assets/icons/nextjs.svg";
 import TailwindCSSIcon from "@/assets/icons/tailwindcss.svg";
 import mapImage from "@/assets/images/mapGR.png";
-import smileMemoji from "@/assets/images/memoji-smile.png";
+import smileMemoji from "@/assets/images/memoji-avatar-6.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
