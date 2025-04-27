@@ -3,17 +3,17 @@ import { Inter, Calistoga } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 
+export const metadata: Metadata = {
+  title: "Marios Kanellopoulos",
+  description: "Portfolio of my work as a web developer",
+};
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistogra = Calistoga({
   subsets: ["latin"],
   variable: "--font-serif",
   weight: ["400"],
 });
-
-export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Portfolio of my work as a frontend developer",
-};
 
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
         className={twMerge(
           inter.variable,
           calistogra.variable,
-          "bg-gray-900 text-white antialiased font-sans",
+          "bg-gray-900 text-white antialiased font-sans"
         )}
       >
         {children}

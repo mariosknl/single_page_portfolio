@@ -2,6 +2,8 @@ import inoxtecLandingPage from "@/assets/images/inoxtec.png";
 import ylgLandingPage from "@/assets/images/ylg.png";
 import theodosiaWebsite from "@/assets/images/theodosiantenti.png";
 import onthornsWebsite from "@/assets/images/onthorns.png";
+import go4petsWebsite from "@/assets/images/go4pets.png";
+import mariadempegiotiWebsite from "@/assets/images/mariadempegioti.png";
 import blockreadyWebsite from "@/assets/images/blockready.png";
 import cognityWebsite from "@/assets/images/cognity.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
@@ -84,8 +86,32 @@ const portfolioProjects = [
       { title: "Integrated shopping cart with PayPal" },
       { title: "Managed discography, upcoming events, and inventory" },
     ],
-    link: "https://onthornsilay.live/",
+    link: "https://www.onthornsilay.live/",
     image: onthornsWebsite,
+  },
+  {
+    company: "Go4Pets",
+    year: "2025",
+    title: "Pet Lovers Community",
+    results: [
+      { title: "Developed with NextJS, TailwindCSS, and TypeScript" },
+      { title: "Integrated SanityCMS for content management" },
+      { title: "Managed user authentication with Clerk" },
+    ],
+    link: "https://www.go4pets.gr/",
+    image: go4petsWebsite,
+  },
+  {
+    company: "Maria Dempegioti",
+    year: "2025",
+    title: "Clothing Manufacturer Website",
+    results: [
+      { title: "Developed with NextJS" },
+      { title: "Using TailwindCSS4 for styling" },
+      { title: "Typescript for type safety" },
+    ],
+    link: "https://www.mariadempegioti.gr/",
+    image: mariadempegiotiWebsite,
   },
 ];
 
@@ -133,7 +159,7 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
+                  <a href={project.link} target="_blank">
                     <button
                       className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold
                 inline-flex items-center justify-center gap-2 mt-8"
