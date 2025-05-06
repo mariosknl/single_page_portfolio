@@ -29,13 +29,13 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
-        version: 22.15.8
+        version: 22.15.12
       '@types/react':
         specifier: ^18
-        version: 18.3.20
+        version: 18.3.21
       '@types/react-dom':
         specifier: ^18
-        version: 18.3.7(@types/react@18.3.20)
+        version: 18.3.7(@types/react@18.3.21)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.3)
@@ -996,8 +996,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@22.15.8':
-    resolution: {integrity: sha512-VINDWfc4C3DGAa1J+riYRHjzt+IFj5eRaEl768ze7ZqXcjyN/4WHxPLAWMLTwmODpPvFyzuMTAT6A4RMOHlg5g==}
+  '@types/node@22.15.12':
+    resolution: {integrity: sha512-K0fpC/ZVeb8G9rm7bH7vI0KAec4XHEhBam616nVJCV51bKzJ6oA3luG4WdKoaztxe70QaNjS/xBmcDLmr4PiGw==}
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
@@ -1007,8 +1007,8 @@ packages:
     peerDependencies:
       '@types/react': ^18.0.0
 
-  '@types/react@18.3.20':
-    resolution: {integrity: sha512-IPaCZN7PShZK/3t6Q87pfTkRm6oLTd4vztyoj+cbHUF1g3FfVb2tFIL79uCRKEfv16AhqDMBywP2VW3KIZUvcg==}
+  '@types/react@18.3.21':
+    resolution: {integrity: sha512-gXLBtmlcRJeT09/sI4PxVwyrku6SaNUj/6cMubjE6T6XdY1fDmBL7r0nX0jbSZPU/Xr0KuwLLZh6aOYY5d91Xw==}
 
   '@typescript-eslint/eslint-plugin@8.31.0':
     resolution: {integrity: sha512-evaQJZ/J/S4wisevDvC1KFZkPzRetH8kYZbkgcTRyql3mcKsf+ZFDV1BVWUGTCAW5pQHoqn5gK5b8kn7ou9aFQ==}
@@ -3989,17 +3989,17 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@22.15.8':
+  '@types/node@22.15.12':
     dependencies:
       undici-types: 6.21.0
 
   '@types/prop-types@15.7.14': {}
 
-  '@types/react-dom@18.3.7(@types/react@18.3.20)':
+  '@types/react-dom@18.3.7(@types/react@18.3.21)':
     dependencies:
-      '@types/react': 18.3.20
+      '@types/react': 18.3.21
 
-  '@types/react@18.3.20':
+  '@types/react@18.3.21':
     dependencies:
       '@types/prop-types': 15.7.14
       csstype: 3.1.3
