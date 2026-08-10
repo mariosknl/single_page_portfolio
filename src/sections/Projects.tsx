@@ -1,16 +1,17 @@
-import inoxtecLandingPage from "@/assets/images/inoxtec.png";
-import ylgLandingPage from "@/assets/images/ylg.png";
-import theodosiaWebsite from "@/assets/images/theodosiantenti.png";
-import onthornsWebsite from "@/assets/images/onthorns.png";
-import go4petsWebsite from "@/assets/images/go4pets.png";
-import mariadempegiotiWebsite from "@/assets/images/mariadempegioti.png";
+import Image from "next/image";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import blockreadyWebsite from "@/assets/images/blockready.png";
 import cognityWebsite from "@/assets/images/cognity.png";
-import CheckCircleIcon from "@/assets/icons/check-circle.svg";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import Image from "next/image";
-import { SectionHeader } from "@/components/SectionHeader";
+import go4petsWebsite from "@/assets/images/go4pets.png";
+import inoxtecLandingPage from "@/assets/images/inoxtec.png";
+import mariadempegiotiWebsite from "@/assets/images/mariadempegioti.png";
+import onthornsWebsite from "@/assets/images/onthorns.png";
+import theodosiaWebsite from "@/assets/images/theodosiantenti.png";
+import wasExamPrepWebsite from "@/assets/images/wasexamprep.png";
+import ylgLandingPage from "@/assets/images/ylg.png";
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const portfolioProjects = [
   {
@@ -28,6 +29,20 @@ const portfolioProjects = [
     ],
     link: "https://www.cognity.gr",
     image: cognityWebsite,
+  },
+  {
+    company: "Was Exam Prep",
+    year: "2026",
+    title: "Freelance Accessibility Exam Platform",
+    results: [
+      { title: "Built and own the full product end-to-end" },
+      {
+        title: "WCAG-aligned curriculum with Required vs Best Practice levels",
+      },
+      { title: "Live at wasexamprep.com" },
+    ],
+    link: "https://www.wasexamprep.com",
+    image: wasExamPrepWebsite,
   },
   {
     company: "Blockready",
@@ -161,6 +176,7 @@ export const ProjectsSection = () => {
                   </ul>
                   <a href={project.link} target="_blank">
                     <button
+                      type="button"
                       className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold
                 inline-flex items-center justify-center gap-2 mt-8"
                     >
