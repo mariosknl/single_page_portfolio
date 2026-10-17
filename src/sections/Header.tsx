@@ -1,23 +1,37 @@
-export const Header = () => {
+import Link from "next/link";
+
+type HeaderProps = {
+  skipLinkHref?: string;
+};
+
+export const Header = ({ skipLinkHref }: HeaderProps) => {
   return (
-    <div className="flex justify-center items-center fixed w-full top-3 z-20">
-      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-        <a href="#" className="nav-item">
+    <header className="flex justify-center items-center fixed w-full top-3 z-20">
+      {skipLinkHref ? (
+        <a className="skip-link" href={skipLinkHref}>
+          Skip to content
+        </a>
+      ) : null}
+      <nav
+        aria-label="Primary"
+        className="flex max-w-[calc(100%-1.5rem)] flex-wrap justify-center gap-1 rounded-full border border-white/15 bg-white/10 p-0.5 backdrop-blur"
+      >
+        <Link href="/" className="nav-item">
           Home
-        </a>
-        <a className="nav-item" href="#projects">
+        </Link>
+        <Link className="nav-item" href="/#projects">
           Projects
-        </a>
-        <a className="nav-item" href="#about">
+        </Link>
+        <Link className="nav-item" href="/#about">
           About
-        </a>
-        <a
+        </Link>
+        <Link
           className="nav-item bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900"
-          href="#contact"
+          href="/#contact"
         >
           Contact
-        </a>
+        </Link>
       </nav>
-    </div>
+    </header>
   );
 };
