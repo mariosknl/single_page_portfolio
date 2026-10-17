@@ -58,9 +58,10 @@ async function main() {
   let meta = null;
 
   try {
-    const desktop = await browser.newPage({
+    const desktopContext = await browser.newContext({
       viewport: { width: 1280, height: 800 },
     });
+    const desktop = await desktopContext.newPage();
     await desktop.goto(`${baseUrl}/case-studies/theodosiantenti`, {
       waitUntil: "networkidle",
     });
@@ -111,9 +112,10 @@ async function main() {
       JSON.stringify(meta, null, 2),
     );
 
-    const mobile = await browser.newPage({
+    const mobileContext = await browser.newContext({
       viewport: { width: 390, height: 844 },
     });
+    const mobile = await mobileContext.newPage();
     await mobile.goto(`${baseUrl}/case-studies/theodosiantenti`, {
       waitUntil: "networkidle",
     });
@@ -130,9 +132,10 @@ async function main() {
       ...(await overflow(mobile)),
     });
 
-    const narrow = await browser.newPage({
+    const narrowContext = await browser.newContext({
       viewport: { width: 320, height: 800 },
     });
+    const narrow = await narrowContext.newPage();
     await narrow.goto(`${baseUrl}/case-studies/theodosiantenti`, {
       waitUntil: "networkidle",
     });
@@ -146,9 +149,10 @@ async function main() {
       ...(await overflow(narrow)),
     });
 
-    const home = await browser.newPage({
+    const homeContext = await browser.newContext({
       viewport: { width: 1280, height: 800 },
     });
+    const home = await homeContext.newPage();
     await home.goto(baseUrl, { waitUntil: "networkidle" });
     const card = home.locator("#case-study");
     await card.scrollIntoViewIfNeeded();
@@ -160,9 +164,10 @@ async function main() {
       fullPage: false,
     });
 
-    const homeMobile = await browser.newPage({
+    const homeMobileContext = await browser.newContext({
       viewport: { width: 390, height: 844 },
     });
+    const homeMobile = await homeMobileContext.newPage();
     await homeMobile.goto(baseUrl, { waitUntil: "networkidle" });
     const mobileCard = homeMobile.locator("#case-study");
     await mobileCard.scrollIntoViewIfNeeded();
