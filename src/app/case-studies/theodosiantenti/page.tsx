@@ -78,35 +78,140 @@ const criteria = [
   ["4.1.3 Status Messages", "Fail", "Pass"],
 ];
 
-const figures = [
+const imageBase = "/case-studies/theodosiantenti/images";
+
+const figures: {
+  title: string;
+  name: string;
+  width: number;
+  height: number;
+  widths: number[];
+  alt: string;
+  imageClassName?: string;
+  before: React.ReactNode;
+  after: React.ReactNode;
+}[] = [
   {
     title: "Skip link",
+    name: "skip-link",
+    width: 1200,
+    height: 118,
+    widths: [720, 1200],
+    alt: "Before and after of the store header. Before, 14 October: the header has no visible skip link. After, 17 October: a skip link is visible at the top left of the header.",
     before:
       "On focus, the skip link measured 130×1 px, so it was effectively invisible.",
-    after:
-      "The skip link measures 208×37 px and is visible. It targets the main content.",
+    after: (
+      <>
+        The skip link measures 208×37 px and is visible. Its label is{" "}
+        <span lang="el">Μετάβαση στο Περιεχόμενο</span>, and it targets the
+        main content.
+      </>
+    ),
   },
   {
     title: "Sale price contrast",
+    name: "sale-price",
+    width: 1200,
+    height: 395,
+    widths: [720, 1200],
+    alt: "Before and after of sale prices on a collection page. Before, 14 October: prices such as €39.00 are bright red. After, 17 October: the same kind of sale price is a darker red.",
     before: "The sale price colour #e95144 measured 3.66:1.",
-    after:
-      "The sale price colour #b3261e measures 6.15:1 against #f8f8f8.",
+    after: "The sale price colour #b3261e measures 6.15:1 against #f8f8f8.",
   },
   {
     title: "Focus on navigation",
+    name: "focus-nav",
+    width: 1200,
+    height: 118,
+    widths: [720, 1200],
+    alt: "Before and after of the desktop navigation. Before, 14 October: Clothing, Collections, Bazaar, and Blog have no focus indicator. After, 17 October: Clothing has a visible light focus outline.",
     before:
-      "Navigation and buttons used no outline, so keyboard focus was not visible. In the navigation comparison, Clothing has no focus indicator.",
+      "Navigation and buttons used no outline, so keyboard focus was not visible.",
     after:
-      "Theme controls use a solid 2–3 px focus indicator plus a shadow. In the navigation comparison, Clothing shows that indicator.",
+      "Theme controls use a solid 2–3 px focus indicator plus a shadow. In this comparison the indicator is on Clothing.",
   },
   {
     title: "Mobile menu",
+    name: "mobile-menu",
+    width: 810,
+    height: 884,
+    widths: [480, 810],
+    imageClassName: "mx-auto h-auto w-full max-w-md rounded-2xl",
+    alt: "Before and after of the open mobile menu. Before, 14 October: the close control has no focus indicator. After, 17 October: the close control has a visible rectangular focus indicator.",
+    before: (
+      <>
+        The menu button’s accessible name was the English word “menu”. It did
+        not expose an expanded state, focus was not trapped, and Escape did not
+        close it.
+      </>
+    ),
+    after: (
+      <>
+        The accessible name is the Greek word <span lang="el">Μενού</span>.
+        The button exposes expanded and controls. Focus moves to the close
+        control, Tab stays inside, and Escape closes the menu and returns
+        focus to the menu button.
+      </>
+    ),
+  },
+  {
+    title: "Search",
+    name: "search-modal",
+    width: 1200,
+    height: 395,
+    widths: [720, 1200],
+    alt: "Before and after of search on the home page. Before, 14 October: the page is shown with no search dialog. After, 17 October: the search dialog is open, the search field has a visible focus outline, and a close control sits above the field.",
     before:
-      'The menu button’s accessible name was the English word “menu”. It did not expose an expanded state, focus was not trapped, and Escape did not close it.',
+      "On desktop, focus stayed on the search summary and Tab moved on to the slider.",
     after:
-      "The accessible name is the Greek word Μενού. The button exposes expanded and controls. Focus moves to the close control, Tab stays inside, and Escape closes the menu and returns focus to the menu button.",
+      "Focus moves to the search field. Tab stays on the field, the search button, and close. Escape returns focus to the summary.",
   },
 ];
+
+function AuditImage({
+  name,
+  width,
+  height,
+  widths,
+  alt,
+  className = "h-auto w-full max-w-full rounded-2xl",
+}: {
+  name: string;
+  width: number;
+  height: number;
+  widths: number[];
+  alt: string;
+  className?: string;
+}) {
+  const srcSet = (extension: string) =>
+    widths
+      .map((size) => `${imageBase}/${name}-${size}.${extension} ${size}w`)
+      .join(", ");
+
+  return (
+    <picture>
+      <source
+        type="image/avif"
+        srcSet={srcSet("avif")}
+        sizes="(max-width: 700px) 100vw, 960px"
+      />
+      <source
+        type="image/webp"
+        srcSet={srcSet("webp")}
+        sizes="(max-width: 700px) 100vw, 960px"
+      />
+      <img
+        src={`${imageBase}/${name}-${width}.webp`}
+        width={width}
+        height={height}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className={className}
+      />
+    </picture>
+  );
+}
 
 function Th({
   children,
@@ -214,30 +319,28 @@ export default function TheodosiaCaseStudyPage() {
                   Results by page
                 </h2>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  The audit chart is not embedded on this page. The original
-                  image was not available when the page was built. The table
-                  is the same per-page data. Intermediate totals on that chart
-                  were 301 on 16 October, after publish, and 218 on the morning
-                  of 17 October. The settled re-run totals 11 nodes: the 10
-                  region findings and the 1 intermittent duplicate label.
-                  Colour-contrast in that re-run is 0. There is no settled
-                  baseline for the original theme. These are automated results
-                  only.
+                  The chart is the automated before-and-after comparison. The
+                  table has the same per-page numbers. Intermediate totals on
+                  the chart were 301 on 16 October, after publish, and 218 on
+                  the morning of 17 October. The settled re-run totals 11
+                  nodes: the 10 region findings and the 1 intermittent
+                  duplicate label. Colour-contrast in that re-run is 0. There
+                  is no settled baseline for the original theme. These are
+                  automated results only.
                 </p>
                 <figure className="mt-6">
-                  <div className="rounded-2xl border border-dashed border-white/25 px-5 py-6">
-                    <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
-                      Chart placeholder
-                    </p>
-                    <p className="mt-3 text-white/80">
-                      Placeholder for the axe before/after chart. It compared
-                      violation nodes for each page at 1280 px and 390 px, and
-                      the totals 523 before and 214 after.
-                    </p>
-                  </div>
+                  <AuditImage
+                    name="axe-before-after"
+                    width={1200}
+                    height={446}
+                    widths={[720, 1200]}
+                    alt="Bar chart of axe-core violation nodes. Red bars are before, 14 October, and green bars are after, 17 October, for home, collection, product, search, and cart at 1280 and 390 pixels. Totals shown: 523 before, 301 after the 16 October publish, 218 on the morning of 17 October, 214 for the raw 17 October scan, and 11 after animations settled. The footnote says the settled colour-contrast re-run found 0 nodes."
+                  />
                   <figcaption className="mt-3 text-sm text-white/60">
-                    Reserved for the original chart, to be added as an
-                    optimised WebP or AVIF file.
+                    axe-core 4.13 violation nodes per page and width. Settled
+                    means the colour-contrast re-run after the fade-in
+                    animations finished. The table below lists the same
+                    per-page counts.
                   </figcaption>
                 </figure>
                 <div
@@ -306,10 +409,10 @@ export default function TheodosiaCaseStudyPage() {
                   Before and after
                 </h2>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  Four comparisons from the 14 October and 17 October audits.
-                  The screenshots are not shown: the image files were not
-                  available to save as WebP or AVIF. Each figure states the
-                  measured difference.
+                  Five comparisons from the 14 October and 17 October audits.
+                  Each figure shows the screenshot and states the measured
+                  difference. The left half is before and the right half is
+                  after.
                 </p>
                 <div className="mt-8 flex flex-col gap-10">
                   {figures.map((figure) => (
@@ -317,35 +420,28 @@ export default function TheodosiaCaseStudyPage() {
                       <h3 className="font-serif text-xl md:text-2xl">
                         {figure.title}
                       </h3>
-                      <div className="mt-4 rounded-2xl border border-dashed border-white/25 px-5 py-6">
-                        <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
-                          Screenshot placeholder
-                        </p>
-                        <p className="mt-3 text-white/80">
-                          Placeholder for the before (14 Oct) and after (17
-                          Oct) screenshot of the {figure.title.toLowerCase()}.
-                        </p>
+                      <div className="mt-4">
+                        <AuditImage
+                          name={figure.name}
+                          width={figure.width}
+                          height={figure.height}
+                          widths={figure.widths}
+                          alt={figure.alt}
+                          className={figure.imageClassName}
+                        />
                       </div>
                       <figcaption className="mt-4 space-y-2 text-white/80">
                         <p>
                           <span className="font-semibold text-white">
                             Before, 14 Oct 2026.{" "}
                           </span>
-                          {figure.title === "Mobile menu" ? (
-                            <MobileMenuBefore />
-                          ) : (
-                            figure.before
-                          )}
+                          {figure.before}
                         </p>
                         <p>
                           <span className="font-semibold text-white">
                             After, 17 Oct 2026.{" "}
                           </span>
-                          {figure.title === "Mobile menu" ? (
-                            <MobileMenuAfter />
-                          ) : (
-                            figure.after
-                          )}
+                          {figure.after}
                         </p>
                       </figcaption>
                     </figure>
@@ -516,23 +612,3 @@ export default function TheodosiaCaseStudyPage() {
   );
 }
 
-function MobileMenuBefore() {
-  return (
-    <>
-      The menu button’s accessible name was the English word “menu”. It did
-      not expose an expanded state, focus was not trapped, and Escape did not
-      close it.
-    </>
-  );
-}
-
-function MobileMenuAfter() {
-  return (
-    <>
-      The accessible name is the Greek word{" "}
-      <span lang="el">Μενού</span>. The button exposes expanded and controls.
-      Focus moves to the close control, Tab stays inside, and Escape closes
-      the menu and returns focus to the menu button.
-    </>
-  );
-}
