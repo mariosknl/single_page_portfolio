@@ -71,7 +71,7 @@ const criteria = [
   ["2.2.2 Pause, Stop, Hide", "Fail", "Pass"],
   ["2.4.1 Bypass Blocks", "Partial", "Pass"],
   ["2.4.3 Focus Order", "Fail", "Pass"],
-  ["2.4.6 Headings and Labels", "Fail", "Partial"],
+  ["2.4.6 Headings and Labels", "Fail", "Pass, 18 Oct 2026"],
   ["2.4.7 Focus Visible", "Fail", "Pass"],
   ["3.1.2 Language of Parts", "Partial", "Partial"],
   ["4.1.2 Name, Role, Value", "Fail", "Pass"],
@@ -499,11 +499,37 @@ export default function TheodosiaCaseStudyPage() {
                   WCAG 2.2 AA criteria
                 </h3>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  Eleven criteria moved to Pass. 2.4.6 and 3.1.2 are still
-                  Partial. 2.1.2 was a fail before because focus could leave
-                  the modals. Focus now stays inside until Escape closes the
-                  dialog and returns focus to the trigger.
+                  Twelve criteria are Pass. 3.1.2 Language of Parts is still
+                  Partial. The after column is the 17 October 2026 check,
+                  except 2.4.6 Headings and Labels, which was Partial that day
+                  and was verified Pass live on 18 October 2026. 2.1.2 was a
+                  fail before because focus could leave the modals. Focus now
+                  stays inside until Escape closes the dialog and returns
+                  focus to the trigger.
                 </p>
+                <p className="mt-4 text-white/60 md:text-lg">
+                  On the 18 October check:
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-white/60 md:text-lg">
+                  <li>
+                    The cart drawer edit button’s accessible name is now{" "}
+                    <span lang="el">Επεξεργασία …</span>. It had been
+                    mislabelled <span lang="el">Αφαιρώ …</span>.
+                  </li>
+                  <li>
+                    Visually hidden labels now expose accessible names: the
+                    search field is <span lang="el">Αναζήτηση</span>, and the
+                    newsletter field is <span lang="el">Το email σας</span>.
+                  </li>
+                  <li>
+                    The cart drawer quantity label is fixed. It had been a
+                    missing-translation string.
+                  </li>
+                  <li>
+                    Theme demo blocks with placeholder headings were removed
+                    from the search results sidebar.
+                  </li>
+                </ul>
                 <div className="mt-6 max-w-full overflow-x-auto">
                   <table className="w-full table-fixed border-collapse text-left text-sm md:text-base">
                     <caption className="caption-top mb-4 text-left font-serif text-xl text-white md:text-2xl">
@@ -518,7 +544,7 @@ export default function TheodosiaCaseStudyPage() {
                       <tr>
                         <Th scope="col">Criterion</Th>
                         <Th scope="col">14 Oct 2026</Th>
-                        <Th scope="col">17 Oct 2026</Th>
+                        <Th scope="col">After</Th>
                       </tr>
                     </thead>
                     <tbody>
