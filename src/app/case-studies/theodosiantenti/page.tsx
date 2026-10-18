@@ -90,6 +90,7 @@ const figures: {
   imageClassName?: string;
   before: React.ReactNode;
   after: React.ReactNode;
+  afterDate?: string;
 }[] = [
   {
     title: "Skip link",
@@ -114,8 +115,9 @@ const figures: {
     width: 1200,
     height: 395,
     widths: [720, 1200],
-    alt: "Before and after of sale prices on a collection page. Before, 14 October: prices such as €39.00 are bright red. After, 17 October: the same kind of sale price is a darker red.",
+    alt: "Before and after of sale prices on a collection page. The left half, labeled 14 October, shows bright red sale prices such as €39.00 beside struck-through prices. The right half, labeled 18 October, shows the product grid with those sale prices in a darker red.",
     before: "The sale price colour #e95144 measured 3.66:1.",
+    afterDate: "18 Oct 2026",
     after: "The sale price colour #b3261e measures 6.15:1 against #f8f8f8.",
   },
   {
@@ -439,7 +441,7 @@ export default function TheodosiaCaseStudyPage() {
                         </p>
                         <p>
                           <span className="font-semibold text-white">
-                            After, 17 Oct 2026.{" "}
+                            After, {figure.afterDate ?? "17 Oct 2026"}.{" "}
                           </span>
                           {figure.after}
                         </p>
