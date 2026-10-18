@@ -71,9 +71,9 @@ const criteria = [
   ["2.2.2 Pause, Stop, Hide", "Fail", "Pass"],
   ["2.4.1 Bypass Blocks", "Partial", "Pass"],
   ["2.4.3 Focus Order", "Fail", "Pass"],
-  ["2.4.6 Headings and Labels", "Fail", "Pass, 18 Oct 2026"],
+  ["2.4.6 Headings and Labels", "Fail", "Pass"],
   ["2.4.7 Focus Visible", "Fail", "Pass"],
-  ["3.1.2 Language of Parts", "Partial", "Pass, 18 Oct 2026"],
+  ["3.1.2 Language of Parts", "Partial", "Pass"],
   ["4.1.2 Name, Role, Value", "Fail", "Pass"],
   ["4.1.3 Status Messages", "Fail", "Pass"],
 ];
@@ -104,8 +104,8 @@ const figures: {
     after: (
       <>
         The skip link measures 208×37 px and is visible. Its label is{" "}
-        <span lang="el">Μετάβαση στο Περιεχόμενο</span>, and it targets the
-        main content.
+        <span lang="el">Μετάβαση στο Περιεχόμενο</span>, and it targets the main
+        content.
       </>
     ),
   },
@@ -149,10 +149,10 @@ const figures: {
     ),
     after: (
       <>
-        The accessible name is the Greek word <span lang="el">Μενού</span>.
-        The button exposes expanded and controls. Focus moves to the close
-        control, Tab stays inside, and Escape closes the menu and returns
-        focus to the menu button.
+        The accessible name is the Greek word <span lang="el">Μενού</span>. The
+        button exposes expanded and controls. Focus moves to the close control,
+        Tab stays inside, and Escape closes the menu and returns focus to the
+        menu button.
       </>
     ),
   },
@@ -267,9 +267,9 @@ export default function TheodosiaCaseStudyPage() {
               </h1>
               <p className="mt-4 text-white/60 md:text-lg">
                 Measured with axe-core 4.13 on five pages (home, collection,
-                product, search, and cart) at 1280 px and 390 px. The method
-                was the same before, on 14 October 2026, and after, on 17
-                October 2026.
+                product, search, and cart) at 1280 px and 390 px. The method was
+                the same before, on 14 October 2026, and after, on 17 October
+                2026.
               </p>
             </header>
 
@@ -305,14 +305,13 @@ export default function TheodosiaCaseStudyPage() {
                   </table>
                 </div>
                 <p className="mt-6 text-white/60 md:text-lg">
-                  Of the 214 nodes left, 203 are colour-contrast false
-                  positives from the theme’s fade-in animations. When the scan
-                  is re-run with the animations settled, that colour-contrast
-                  count is 0. Ten are the “region” best-practice rule, from the
-                  skip link sitting outside the header. That placement is
-                  intentional. One is an intermittent best-practice duplicate
-                  landmark label. A repeat run that did not hit that label
-                  recorded 213 nodes.
+                  Of the 214 nodes left, 203 are colour-contrast false positives
+                  from the theme’s fade-in animations. When the scan is re-run
+                  with the animations settled, that colour-contrast count is 0.
+                  Ten are the “region” best-practice rule, from the skip link
+                  sitting outside the header. That placement is intentional. One
+                  is an intermittent best-practice duplicate landmark label. A
+                  repeat run that did not hit that label recorded 213 nodes.
                 </p>
               </Card>
 
@@ -324,11 +323,11 @@ export default function TheodosiaCaseStudyPage() {
                   The chart is the automated before-and-after comparison. The
                   table has the same per-page numbers. Intermediate totals on
                   the chart were 301 on 16 October, after publish, and 218 on
-                  the morning of 17 October. The settled re-run totals 11
-                  nodes: the 10 region findings and the 1 intermittent
-                  duplicate label. Colour-contrast in that re-run is 0. There
-                  is no settled baseline for the original theme. These are
-                  automated results only.
+                  the morning of 17 October. The settled re-run totals 11 nodes:
+                  the 10 region findings and the 1 intermittent duplicate label.
+                  Colour-contrast in that re-run is 0. There is no settled
+                  baseline for the original theme. These are automated results
+                  only.
                 </p>
                 <figure className="mt-6">
                   <AuditImage
@@ -341,14 +340,11 @@ export default function TheodosiaCaseStudyPage() {
                   <figcaption className="mt-3 text-sm text-white/60">
                     axe-core 4.13 violation nodes per page and width. Settled
                     means the colour-contrast re-run after the fade-in
-                    animations finished. The table below lists the same
-                    per-page counts.
+                    animations finished. The table below lists the same per-page
+                    counts.
                   </figcaption>
                 </figure>
-                <div
-                  className="mt-8 max-w-full overflow-x-auto"
-                  tabIndex={0}
-                >
+                <div className="mt-8 max-w-full overflow-x-auto" tabIndex={0}>
                   <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
                     <caption className="caption-top mb-4 text-left font-serif text-xl text-white md:text-2xl">
                       Violation nodes by page and viewport
@@ -395,9 +391,9 @@ export default function TheodosiaCaseStudyPage() {
                   </p>
                   <p>
                     There is no overlay and no widget. The fixes are in the
-                    theme code: one JavaScript file and one CSS file of
-                    numbered fixes (F01–F28), plus content fixes for
-                    alternative text, colours, and section settings.
+                    theme code: one JavaScript file and one CSS file of numbered
+                    fixes (F01–F28), plus content fixes for alternative text,
+                    colours, and section settings.
                   </p>
                   <p className="text-white">
                     This is my wife Theodosia&apos;s store; published with her
@@ -455,15 +451,15 @@ export default function TheodosiaCaseStudyPage() {
                 <h2 className="font-serif text-2xl md:text-4xl">Method</h2>
                 <div className="mt-4 space-y-4 text-white/60 md:text-lg">
                   <p>
-                    axe-core 4.13, with WCAG 2.0–2.2 A and AA plus
-                    best-practice rules, on 5 pages at 1280×800 and 390×844.
-                    The same method was used before (14 October 2026, original
-                    theme) and after (17 October 2026, live theme).
+                    axe-core 4.13, with WCAG 2.0–2.2 A and AA plus best-practice
+                    rules, on 5 pages at 1280×800 and 390×844. The same method
+                    was used before (14 October 2026, original theme) and after
+                    (17 October 2026, live theme).
                   </p>
                   <p>
                     Automated tools catch only part of real-world issues, so
-                    keyboard, focus, motion, and contrast were also checked
-                    with scripted tests. I tested each proposed fix first by
+                    keyboard, focus, motion, and contrast were also checked with
+                    scripted tests. I tested each proposed fix first by
                     overriding the fix files in an automated browser (Playwright
                     request interception). The store owner then applied it in
                     the theme editor. I re-verified it on the live site with
@@ -471,26 +467,25 @@ export default function TheodosiaCaseStudyPage() {
                   </p>
                   <ul className="list-disc space-y-2 pl-5">
                     <li>
-                      Breadcrumb contrast went from 2.68:1 (#999 on #f8f8f8)
-                      to 7.96:1 (#4d4d4d).
+                      Breadcrumb contrast went from 2.68:1 (#999 on #f8f8f8) to
+                      7.96:1 (#4d4d4d).
                     </li>
                     <li>
                       The cart drawer, mobile menu, desktop search, mobile
                       search, and mobile product-tab popups now move focus
-                      inside, keep Tab inside, close on Escape, and return
-                      focus to the trigger.
+                      inside, keep Tab inside, close on Escape, and return focus
+                      to the trigger.
                     </li>
                     <li>
                       Pause controls were added for the slideshow, the marquee,
                       and the video. prefers-reduced-motion is respected.
                     </li>
                     <li>
-                      The add-to-cart action is announced through a live
-                      region.
+                      The add-to-cart action is announced through a live region.
                     </li>
                     <li>
-                      Every visible image across the 10 page and width runs
-                      has meaningful alternative text.
+                      Every visible image across the 10 page and width runs has
+                      meaningful alternative text.
                     </li>
                   </ul>
                 </div>
@@ -499,13 +494,13 @@ export default function TheodosiaCaseStudyPage() {
                   WCAG 2.2 AA criteria
                 </h3>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  Thirteen criteria are Pass. The after column is the 17
-                  October 2026 check, except 2.4.6 Headings and Labels and
-                  3.1.2 Language of Parts, which were Partial that day and
-                  were verified Pass live on 18 October 2026. 2.1.2 was a
-                  fail before because focus could leave the modals. Focus now
-                  stays inside until Escape closes the dialog and returns
-                  focus to the trigger.
+                  Thirteen criteria are Pass. The after column is the 17 October
+                  2026 check, except 2.4.6 Headings and Labels and 3.1.2
+                  Language of Parts, which were Partial that day and were
+                  verified Pass live on 18 October 2026. 2.1.2 was a fail before
+                  because focus could leave the modals. Focus now stays inside
+                  until Escape closes the dialog and returns focus to the
+                  trigger.
                 </p>
                 <p className="mt-4 text-white/60 md:text-lg">
                   On the 18 October check for 2.4.6:
@@ -533,14 +528,14 @@ export default function TheodosiaCaseStudyPage() {
                 <p className="mt-6 text-white/60 md:text-lg">
                   On the 18 October check for 3.1.2, English interface words
                   stay in English because they are familiar to Greek shoppers.
-                  They are now marked <code>lang=&quot;en&quot;</code>, with
-                  no visible change. Proper names, including product and
-                  collection names, are intentionally left untagged.
+                  They are now marked <code>lang=&quot;en&quot;</code>, with no
+                  visible change. Proper names, including product and collection
+                  names, are intentionally left untagged.
                 </p>
                 <ul className="mt-4 list-disc space-y-2 pl-5 text-white/60 md:text-lg">
                   <li>
-                    Navigation and the mega menu: Clothing, Collections,
-                    Bazaar, Blog, and the category names.
+                    Navigation and the mega menu: Clothing, Collections, Bazaar,
+                    Blog, and the category names.
                   </li>
                   <li>
                     Section headings: Trending Now, Sportswear, Customers are
@@ -553,10 +548,9 @@ export default function TheodosiaCaseStudyPage() {
                   <li>English-only aria-labels.</li>
                 </ul>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  The Shopify-hosted checkout shipping rate name “Shipping”
-                  is a documented exception outside the theme. Checkout does
-                  not load theme code, so that name cannot receive a lang
-                  attribute.
+                  The Shopify-hosted checkout shipping rate name “Shipping” is a
+                  documented exception outside the theme. Checkout does not load
+                  theme code, so that name cannot receive a lang attribute.
                 </p>
                 <div className="mt-6 max-w-full overflow-x-auto">
                   <table className="w-full table-fixed border-collapse text-left text-sm md:text-base">
@@ -587,8 +581,8 @@ export default function TheodosiaCaseStudyPage() {
                   </table>
                 </div>
                 <p className="mt-4 text-sm text-white/60 md:text-base">
-                  1.4.10 Reflow passed in the 14 October 2026 audit and was
-                  not re-tested.
+                  1.4.10 Reflow passed in the 14 October 2026 audit and was not
+                  re-tested.
                 </p>
               </Card>
 
@@ -598,10 +592,10 @@ export default function TheodosiaCaseStudyPage() {
                 </h2>
                 <div className="mt-4 space-y-4 text-white/60 md:text-lg">
                   <p>
-                    On 18 October 2026, Marios completed a manual VoiceOver
-                    test with an 18-step VoiceOver checklist. All steps passed.
-                    It was run with VoiceOver in Safari on iPhone. The mega
-                    menu and slideshow pause steps were run on Mac Safari.
+                    On 18 October 2026, Marios completed a manual VoiceOver test
+                    with an 18-step VoiceOver checklist. All steps passed. It
+                    was run with VoiceOver in Safari on iPhone. The mega menu
+                    and slideshow pause steps were run on Mac Safari.
                   </p>
                   <p>The checklist covered:</p>
                   <ul className="list-disc space-y-2 pl-5">
@@ -609,7 +603,9 @@ export default function TheodosiaCaseStudyPage() {
                     <li>Announcement bar pause control</li>
                     <li>Video slideshow (labels, play and pause)</li>
                     <li>Slideshow arrows and dots</li>
-                    <li>Mobile menu dialog (focus, expanded state, and close)</li>
+                    <li>
+                      Mobile menu dialog (focus, expanded state, and close)
+                    </li>
                     <li>Search dialog</li>
                     <li>Product page description tabs</li>
                     <li>Add to cart announcement and cart drawer</li>
@@ -627,13 +623,12 @@ export default function TheodosiaCaseStudyPage() {
                   <p>Shopify-hosted checkout is outside the theme’s scope:</p>
                   <ul className="list-disc space-y-2 pl-5">
                     <li>
-                      The shipping rate name “Shipping”. Checkout does not
-                      load theme code, so that name cannot receive a lang
-                      attribute.
+                      The shipping rate name “Shipping”. Checkout does not load
+                      theme code, so that name cannot receive a lang attribute.
                     </li>
                     <li>
-                      A pre-ticked marketing checkbox. It is a GDPR concern,
-                      and it was kept by owner choice.
+                      A pre-ticked marketing checkbox. It is a GDPR concern, and
+                      it was kept by owner choice.
                     </li>
                     <li>Help icons at 18×18 px (success criterion 2.5.8).</li>
                   </ul>
@@ -680,4 +675,3 @@ export default function TheodosiaCaseStudyPage() {
     </div>
   );
 }
-
