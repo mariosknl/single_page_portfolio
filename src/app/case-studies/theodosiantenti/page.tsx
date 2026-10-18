@@ -544,17 +544,21 @@ export default function TheodosiaCaseStudyPage() {
                   <p>
                     On 18 October 2026, Marios completed a manual VoiceOver
                     test with an 18-step VoiceOver checklist. All steps passed.
+                    It was run with VoiceOver in Safari on iPhone. The mega
+                    menu and slideshow pause steps were run on Mac Safari.
                   </p>
                   <p>The checklist covered:</p>
                   <ul className="list-disc space-y-2 pl-5">
-                    <li>Skip link</li>
-                    <li>Navigation and menu</li>
-                    <li>Search</li>
-                    <li>Product cards</li>
-                    <li>Product page</li>
-                    <li>Add to cart</li>
-                    <li>Cart drawer</li>
-                    <li>Video and slideshow</li>
+                    <li>Headings and landmarks (rotor)</li>
+                    <li>Announcement bar pause control</li>
+                    <li>Video slideshow (labels, play and pause)</li>
+                    <li>Slideshow arrows and dots</li>
+                    <li>Mobile menu dialog (focus, expanded state, and close)</li>
+                    <li>Search dialog</li>
+                    <li>Product page description tabs</li>
+                    <li>Add to cart announcement and cart drawer</li>
+                    <li>Product cards in collections</li>
+                    <li>Mega menu image alternative text</li>
                   </ul>
                 </div>
               </Card>
