@@ -73,7 +73,7 @@ const criteria = [
   ["2.4.3 Focus Order", "Fail", "Pass"],
   ["2.4.6 Headings and Labels", "Fail", "Pass, 18 Oct 2026"],
   ["2.4.7 Focus Visible", "Fail", "Pass"],
-  ["3.1.2 Language of Parts", "Partial", "Partial"],
+  ["3.1.2 Language of Parts", "Partial", "Pass, 18 Oct 2026"],
   ["4.1.2 Name, Role, Value", "Fail", "Pass"],
   ["4.1.3 Status Messages", "Fail", "Pass"],
 ];
@@ -499,16 +499,16 @@ export default function TheodosiaCaseStudyPage() {
                   WCAG 2.2 AA criteria
                 </h3>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  Twelve criteria are Pass. 3.1.2 Language of Parts is still
-                  Partial. The after column is the 17 October 2026 check,
-                  except 2.4.6 Headings and Labels, which was Partial that day
-                  and was verified Pass live on 18 October 2026. 2.1.2 was a
+                  Thirteen criteria are Pass. The after column is the 17
+                  October 2026 check, except 2.4.6 Headings and Labels and
+                  3.1.2 Language of Parts, which were Partial that day and
+                  were verified Pass live on 18 October 2026. 2.1.2 was a
                   fail before because focus could leave the modals. Focus now
                   stays inside until Escape closes the dialog and returns
                   focus to the trigger.
                 </p>
                 <p className="mt-4 text-white/60 md:text-lg">
-                  On the 18 October check:
+                  On the 18 October check for 2.4.6:
                 </p>
                 <ul className="mt-4 list-disc space-y-2 pl-5 text-white/60 md:text-lg">
                   <li>
@@ -530,6 +530,34 @@ export default function TheodosiaCaseStudyPage() {
                     from the search results sidebar.
                   </li>
                 </ul>
+                <p className="mt-6 text-white/60 md:text-lg">
+                  On the 18 October check for 3.1.2, English interface words
+                  stay in English because they are familiar to Greek shoppers.
+                  They are now marked <code>lang=&quot;en&quot;</code>, with
+                  no visible change. Proper names, including product and
+                  collection names, are intentionally left untagged.
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-white/60 md:text-lg">
+                  <li>
+                    Navigation and the mega menu: Clothing, Collections,
+                    Bazaar, Blog, and the category names.
+                  </li>
+                  <li>
+                    Section headings: Trending Now, Sportswear, Customers are
+                    saying, Newsletter Sign Up, and Styling Tips.
+                  </li>
+                  <li>The mobile bottom bar.</li>
+                  <li>Badges: New and Sold out.</li>
+                  <li>Filters and sort.</li>
+                  <li>The Checkout and Wishlist buttons.</li>
+                  <li>English-only aria-labels.</li>
+                </ul>
+                <p className="mt-4 text-white/60 md:text-lg">
+                  The Shopify-hosted checkout shipping rate name “Shipping”
+                  is a documented exception outside the theme. Checkout does
+                  not load theme code, so that name cannot receive a lang
+                  attribute.
+                </p>
                 <div className="mt-6 max-w-full overflow-x-auto">
                   <table className="w-full table-fixed border-collapse text-left text-sm md:text-base">
                     <caption className="caption-top mb-4 text-left font-serif text-xl text-white md:text-2xl">
@@ -598,16 +626,17 @@ export default function TheodosiaCaseStudyPage() {
                 <div className="mt-4 space-y-4 text-white/60 md:text-lg">
                   <p>Shopify-hosted checkout is outside the theme’s scope:</p>
                   <ul className="list-disc space-y-2 pl-5">
-                    <li>An English “Shipping” rate name.</li>
+                    <li>
+                      The shipping rate name “Shipping”. Checkout does not
+                      load theme code, so that name cannot receive a lang
+                      attribute.
+                    </li>
                     <li>
                       A pre-ticked marketing checkbox. It is a GDPR concern,
                       and it was kept by owner choice.
                     </li>
                     <li>Help icons at 18×18 px (success criterion 2.5.8).</li>
                   </ul>
-                  <p>
-                    English navigation labels are a branding choice.
-                  </p>
                 </div>
               </Card>
 
