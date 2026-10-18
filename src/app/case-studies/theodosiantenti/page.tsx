@@ -628,17 +628,37 @@ export default function TheodosiaCaseStudyPage() {
                   What remains
                 </h2>
                 <div className="mt-4 space-y-4 text-white/60 md:text-lg">
-                  <p>Shopify-hosted checkout is outside the theme’s scope:</p>
+                  <p>
+                    Shopify-hosted checkout is outside the theme’s scope and,
+                    on a non-Plus plan, cannot be customised beyond the logo,
+                    colours, and fonts. This was checked live on 18 October
+                    2026 as an anonymous guest. Nothing was submitted.
+                  </p>
                   <ul className="list-disc space-y-2 pl-5">
                     <li>
-                      The shipping rate name “Shipping”. Checkout does not load
-                      theme code, so that name cannot receive a lang attribute.
+                      The shipping rate name “Shipping” is kept in English by
+                      owner choice. Checkout does not load theme code, so that
+                      name cannot receive a lang attribute.
                     </li>
                     <li>
-                      A pre-ticked marketing checkbox. It is a GDPR concern, and
-                      it was kept by owner choice.
+                      A pre-ticked marketing checkbox. It is a GDPR concern,
+                      and it was kept by owner choice.
                     </li>
-                    <li>Help icons at 18×18 px (success criterion 2.5.8).</li>
+                    <li>
+                      Success criterion 2.5.8 Target Size (Minimum) is a
+                      platform limitation. Shopify’s own 18×18 px help icons
+                      inside the email, phone, and card security code fields
+                      sit about 9 px from their input, or overlap it. The
+                      email tooltip and the card fields are Shopify UI that
+                      cannot be changed without Shopify Plus. The phone icon
+                      goes away only by removing the phone field, which
+                      couriers and cash on delivery need. On mobile, at 390
+                      px, axe also flags the checkout footer policy links
+                      “Privacy policy” and “Legal notice” at 22.8 px spacing
+                      against the 24 px minimum. Those links come from the
+                      store’s legal policies, which the owner keeps visible
+                      in checkout.
+                    </li>
                   </ul>
                 </div>
               </Card>
