@@ -344,9 +344,17 @@ export default function TheodosiaCaseStudyPage() {
                     counts.
                   </figcaption>
                 </figure>
-                <div className="mt-8 max-w-full overflow-x-auto" tabIndex={0}>
+                <section
+                  className="mt-8 max-w-full overflow-x-auto rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                  // biome-ignore lint/a11y/noNoninteractiveTabindex: scrollable table region must be keyboard-focusable (WCAG 2.1.1)
+                  tabIndex={0}
+                  aria-labelledby="violation-nodes-caption"
+                >
                   <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
-                    <caption className="caption-top mb-4 text-left font-serif text-xl text-white md:text-2xl">
+                    <caption
+                      id="violation-nodes-caption"
+                      className="caption-top mb-4 text-left font-serif text-xl text-white md:text-2xl"
+                    >
                       Violation nodes by page and viewport
                     </caption>
                     <thead>
@@ -370,7 +378,7 @@ export default function TheodosiaCaseStudyPage() {
                       ))}
                     </tbody>
                   </table>
-                </div>
+                </section>
               </Card>
 
               <Card className="px-6 py-8 sm:px-8 md:px-10 md:py-12">
