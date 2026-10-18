@@ -4,8 +4,8 @@
 
 @layer base {
     .nav-item {
-        @apply px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white
-        transition duration-300;
+        @apply px-2.5 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white
+        transition duration-300 sm:px-4;
     }
 
     .hero-ring {
@@ -17,5 +17,67 @@
 @later utilities {
     .container {
         @apply lg:max-w-5xl;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 50;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: #ffffff;
+    color: #111827;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    outline: 2px solid #6ee7b7;
+    outline-offset: 3px;
+}
+
+.case-study :focus-visible {
+    outline: 2px solid #6ee7b7;
+    outline-offset: 2px;
+}
+
+.case-study #main-content:focus,
+.case-study #main-content:focus-visible {
+    outline: none;
+}
+
+.case-study :focus {
+    scroll-margin-top: 5.5rem;
+}
+
+/* text-white/40 on gray-900 is below WCAG AA. This page only. */
+.case-study footer .text-white\/40 {
+    color: rgb(255 255 255 / 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-study *,
+    .case-study *::before,
+    .case-study *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

@@ -29,16 +29,21 @@ export const Footer = () => {
           <div className="text-white/40">
             &copy; {currentYear} All rights reserved.
           </div>
-          <nav className="flex flex-col md:flex-row items-center gap-8">
+          <nav
+            aria-label="Social"
+            className="flex flex-col md:flex-row items-center gap-8"
+          >
             {footerLinks.map((link) => (
               <a
                 href={link.href}
                 key={link.title}
                 className="inline-flex items-center gap-1.5"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="font-semibold">{link.title}</span>
-                <ArrowUpRightIcon className="size-4" />
+                <ArrowUpRightIcon className="size-4" aria-hidden="true" />
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             ))}
           </nav>
