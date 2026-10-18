@@ -98,12 +98,14 @@ async function main() {
         hasDisclosure: text.includes(
           "This is my wife Theodosia's store; published with her consent.",
         ),
-        hasScreenReaderPlaceholder: text.includes(
-          "VoiceOver testing is pending, by Marios.",
-        ),
-        claimsScreenReaderDone: /screen reader testing (was|has been) (done|completed)/i.test(
-          text,
-        ),
+        hasVoiceOverPass:
+          text.includes(
+            "On 18 October 2026, Marios completed a manual VoiceOver test",
+          ) && text.includes("All steps passed."),
+        mentionsPendingScreenReader:
+          /voiceover testing is pending|no screen-reader testing/i.test(
+            `${text}\n${document.querySelector('meta[name="description"]')?.content ?? ""}\n${document.querySelector('meta[property="og:description"]')?.content ?? ""}`,
+          ),
         mentionsCartEditMislabel: text.includes("announced as"),
       };
     });
@@ -193,8 +195,8 @@ async function main() {
       meta?.lang === "en" &&
       meta?.h1Count === 1 &&
       meta?.hasDisclosure === true &&
-      meta?.hasScreenReaderPlaceholder === true &&
-      meta?.claimsScreenReaderDone === false,
+      meta?.hasVoiceOverPass === true &&
+      meta?.mentionsPendingScreenReader === false,
   };
 
   await writeFile(

@@ -540,14 +540,22 @@ export default function TheodosiaCaseStudyPage() {
                 <h2 className="font-serif text-2xl md:text-4xl">
                   Screen reader testing
                 </h2>
-                <div className="mt-6 rounded-2xl border border-dashed border-emerald-300/60 px-5 py-6">
-                  <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
-                    Placeholder
+                <div className="mt-4 space-y-4 text-white/60 md:text-lg">
+                  <p>
+                    On 18 October 2026, Marios completed a manual VoiceOver
+                    test with an 18-step VoiceOver checklist. All steps passed.
                   </p>
-                  <p className="mt-3 text-white md:text-lg">
-                    VoiceOver testing is pending, by Marios. No screen-reader
-                    testing has been done, including VoiceOver and NVDA.
-                  </p>
+                  <p>The checklist covered:</p>
+                  <ul className="list-disc space-y-2 pl-5">
+                    <li>Skip link</li>
+                    <li>Navigation and menu</li>
+                    <li>Search</li>
+                    <li>Product cards</li>
+                    <li>Product page</li>
+                    <li>Add to cart</li>
+                    <li>Cart drawer</li>
+                    <li>Video and slideshow</li>
+                  </ul>
                 </div>
               </Card>
 
